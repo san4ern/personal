@@ -1,22 +1,25 @@
 const express = require('express');
+const path = require("path");
 const { readdirSync, rename } = require('fs');
 const app = new express();
 let requests = 0;
+
 app.use(function(req, res, next) {
     requests++;
     next();
 })
+
+app.use('/images/', express.static(__dirname + '/images'));
+
 app.get('/', function (req, res) {
         res.redirect('https://guides.san4ouZ.ml/api')
 })
+
 app.get('/stats', function (req, res) {
     res.send({
         requests: requests
     })
 })
-app.use('/images/', () => {
-    express.static(__dirname + '/images');
-});
 
 app.get('/random', function (req, res) {
         const { query } = req;
