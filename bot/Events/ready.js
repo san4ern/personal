@@ -1,4 +1,3 @@
-module.exports = client => {
+module.exports = () => {
     console.log('READY!');
-    void client.user.setActivity({ type: "PLAYING", name: "managing"})
 }

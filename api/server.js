@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
         res.redirect('https://guides.san4ouZ.ml/api')
 })
 
+app.get('/discord', function (req, res) {
+    res.redirect('https://discord.gg/wmFrhpy8g2')
+})
+
 app.get('/stats', function (req, res) {
     res.send({
         requests: requests
