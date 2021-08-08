@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/discord', function (req, res) {
-    res.redirect('https://discord.gg/wmFrhpy8g2')
+    res.redirect('https://discord.gg/GQF3ANKFuw')
 })
 
 app.get('/stats', function (req, res) {
