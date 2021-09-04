@@ -71,27 +71,13 @@ module.exports = async client => {
     })
 
     app.use(async function (req, res) {
-        const path = req.originalUrl.slice(1);
-        const endpoint = client.cache.endpoints.get(path);
-        if(!endpoint) {
-            const images = readdirSync('./api/images/memes');
-
-            const random = Math.floor(Math.random() * images.length);
-            const img = images[random];
-
-            res.sendFile(__dirname + `/images/memes/${img}`)
-        } else {
-            try {
-                await res.redirect(endpoint.link);
-            } catch {
                 const images = readdirSync('./api/images/memes');
 
                 const random = Math.floor(Math.random() * images.length);
                 const img = images[random];
 
                 res.sendFile(__dirname + `/images/memes/${img}`)
-            }
-        }
+      
     });
 
     /* const files = readdirSync('./images/foxes');
