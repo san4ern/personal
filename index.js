@@ -2,7 +2,7 @@ const Client = require('./bot/Struct/Client');
 require('dotenv').config();
 
 const client = new Client();
-require('./api/server');
+require('./api/server')(client);
 require('./bot/Handlers/CommandsHandler')(client);
 require('./bot/Handlers/EventsHandler')(client);
 
