@@ -1,6 +1,6 @@
 module.exports = async(client, eventName, message) => {
     if(message.author.bot || message.channel.type === 'dm') return;
-    const prefix = '!';
+    const prefix = process.env.PREFIX;
 
     if(!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
